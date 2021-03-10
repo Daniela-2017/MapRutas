@@ -21,9 +21,11 @@
                 </agm-info-window>
 
             </agm-marker> OJO ACA
-            <agm-polyline *ngFor="let polyline of polylines;let i = index;" [strokeColor]="polyline.color">
-                <agm-polyline-point *ngFor="let point of polyline.path" [latitude]="lat" [longitude]="lng">
-                </agm-polyline-point>
+            <agm-polyline [strokeColor]="'black'">
+                <ng-container>
+                    <agm-polyline-point *ngFor="let marcador of marcadores; let i = index" [latitude]="marcador.lat" [longitude]="marcador.lng">
+                    </agm-polyline-point>
+                </ng-container>
             </agm-polyline>
 
         </agm-map>
